@@ -15,27 +15,33 @@ let answer = []
 
 function display0(){
   document.getElementById("calc-screen").innerHTML = 0
+  answer.push(0)
 
 }
 
 function display1(){
   document.getElementById("calc-screen").innerHTML = 1
+  answer.push(1)
 }
 
 function display2(){
   document.getElementById("calc-screen").innerHTML = 2
+  answer.push(2)
 }
 
 function display3(){
   document.getElementById("calc-screen").innerHTML = 3
+  answer.push(3)
 }
 
 function displayPlus(){
   document.getElementById("calc-screen").innerHTML = "+"
+  answer.push("+")
 }
 
 function displayMinus(){
   document.getElementById("calc-screen").innerHTML = "-"
+  answer.push("-")
 }
 
 function displayAnswer(){
