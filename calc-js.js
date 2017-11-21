@@ -14,6 +14,7 @@ let operator = document.getElementsByClassName("opr-btn")
 }
 let equation = []
 
+
 //functions to display numbers/operators and push to the equation array, which will be used to perform the calculation
 function display0(){
   document.getElementById("calc-screen").innerHTML = 0
@@ -53,10 +54,15 @@ function displayMinus(){
 function displayAnswer(){
   //this will call on a variable "answer" that I will define below to be the result of the equation
   document.getElementById("calc-screen").innerHTML = equation.join("")
+  numbers()
 }
 
-function display(evt) {
-  let select = 10;
-  document.getElementById("calc-screen").innerHTML = select
+
+function getNumbers(){
+let operation = equation.join("");
+let numbers =  operation.split(/\D/g)
+  console.log(numbers)
+
+
 
 }
