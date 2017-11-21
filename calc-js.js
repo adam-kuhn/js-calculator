@@ -16,44 +16,49 @@ let equation = []
 
 
 //functions to display numbers/operators and push to the equation array, which will be used to perform the calculation
+function display(){
+  document.getElementById("calc-equation").innerHTML = equation.join("")
+}
 function display0(){
   document.getElementById("calc-screen").innerHTML = 0
   equation.push(0)
-  document.getElementById("calc-equation").innerHTML = equation.join("")
+  display()
+
 }
 function display1(){
   document.getElementById("calc-screen").innerHTML = 1
   equation.push(1)
-  document.getElementById("calc-equation").innerHTML = equation.join("")
+  //document.getElementById("calc-equation").innerHTML = equation.join("")
+  display()
 }
 
 function display2(){
   document.getElementById("calc-screen").innerHTML = 2
   equation.push(2)
-  document.getElementById("calc-equation").innerHTML = equation.join("")
+  display()
 }
 
 function display3(){
   document.getElementById("calc-screen").innerHTML = 3
   equation.push(3)
-  document.getElementById("calc-equation").innerHTML = equation.join("")
+  display()
 }
 
 function displayPlus(){
   document.getElementById("calc-screen").innerHTML = "+"
   equation.push("+")
-  document.getElementById("calc-equation").innerHTML = equation.join("")
+  display()
 }
 
 function displayMinus(){
   document.getElementById("calc-screen").innerHTML = "-"
   equation.push("-")
-  document.getElementById("calc-equation").innerHTML = equation.join("")
+  display()
 }
 
 function displayAnswer(){
   //this will call on a variable "answer" that I will define below to be the result of the equation
-  document.getElementById("calc-screen").innerHTML = equation.join("")
+  display()
   numbers()
 }
 
@@ -62,7 +67,5 @@ function getNumbers(){
 let operation = equation.join("");
 let numbers =  operation.split(/\D/g)
   console.log(numbers)
-
-
 
 }
