@@ -8,44 +8,52 @@ document.getElementById("plus").addEventListener("click", displayPlus);
 document.getElementById("minus").addEventListener("click", displayMinus);
 document.getElementById("equals").addEventListener("click", displayAnswer);
 
+
 let digits = document.getElementsByClassName("nbr-btn")
 let operator = document.getElementsByClassName("opr-btn")
 }
 let answer = []
 
+
 function display0(){
   document.getElementById("calc-screen").innerHTML = 0
   answer.push(0)
+  document.getElementById("calc-equation").innerHTML = answer.join("")
 
 }
 
 function display1(){
   document.getElementById("calc-screen").innerHTML = 1
   answer.push(1)
+  document.getElementById("calc-equation").innerHTML = answer.join("")
 }
 
 function display2(){
   document.getElementById("calc-screen").innerHTML = 2
   answer.push(2)
+  document.getElementById("calc-equation").innerHTML = answer.join("")
 }
 
 function display3(){
   document.getElementById("calc-screen").innerHTML = 3
   answer.push(3)
+  document.getElementById("calc-equation").innerHTML = answer.join("")
 }
 
 function displayPlus(){
   document.getElementById("calc-screen").innerHTML = "+"
   answer.push("+")
+  document.getElementById("calc-equation").innerHTML = answer.join("")
 }
 
 function displayMinus(){
   document.getElementById("calc-screen").innerHTML = "-"
   answer.push("-")
+  document.getElementById("calc-equation").innerHTML = answer.join("")
 }
 
 function displayAnswer(){
-  document.getElementById("calc-screen").innerHTML = answer
+  //document.getElementById("calc-screen").innerHTML = answer.join("")
 }
 
 function display(evt) {
