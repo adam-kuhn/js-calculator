@@ -1,12 +1,50 @@
 window.onload = function (){
-document.getElementById("calc-btns").addEventListener("click", display);
+//document.getElementById("calc-btns").addEventListener("click", display);
+document.getElementById("0").addEventListener("click", display0);
+document.getElementById("1").addEventListener("click", display1);
+document.getElementById("2").addEventListener("click", display2);
+document.getElementById("3").addEventListener("click", display3);
+document.getElementById("plus").addEventListener("click", displayPlus);
+document.getElementById("minus").addEventListener("click", displayMinus);
+document.getElementById("equals").addEventListener("click", displayAnswer);
 
 let digits = document.getElementsByClassName("nbr-btn")
 let operator = document.getElementsByClassName("opr-btn")
 }
+let answer = []
 
-function display() {
+function display0(){
+  document.getElementById("calc-screen").innerHTML = 0
+
+}
+
+function display1(){
   document.getElementById("calc-screen").innerHTML = 1
+}
+
+function display2(){
+  document.getElementById("calc-screen").innerHTML = 2
+}
+
+function display3(){
+  document.getElementById("calc-screen").innerHTML = 3
+}
+
+function displayPlus(){
+  document.getElementById("calc-screen").innerHTML = "+"
+}
+
+function displayMinus(){
+  document.getElementById("calc-screen").innerHTML = "-"
+}
+
+function displayAnswer(){
+  document.getElementById("calc-screen").innerHTML = answer
+}
+
+function display(evt) {
+  let select = 10;
+  document.getElementById("calc-screen").innerHTML = select
 
 }
 
