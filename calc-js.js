@@ -1,3 +1,4 @@
+
 window.onload = function (){
 
 document.getElementById("0").addEventListener("click", display0);
@@ -64,17 +65,38 @@ function displayMinus(){
 function displayAnswer(){
   //this will call on a variable "answer" that I will define below to be the result of the equation
   display()
-  getNumbers()
+  getEquation()
 }
 
 //operator will always be at an odd placement, 1,3,5...
-function getNumbers(){
+function getEquation(){
+  //split the numbers out
 let operation = equation.join("");
 let numbers =  operation.split(/\D/g)
+let operator = []
+
+console.log(operation)
   console.log("numbers " + numbers)
+//split the operators
+getOperators = operation.split(/\d/g)
+for (j=0; j < getOperators.length; j++){
+  if (getOperators[j] == "+" || getOperators[j] == "-" ){
+    operator.push(getOperators[j])
+  }
+
+
+}
+
+    console.log("operators " + operator)
+    console.log("length " + operator.length)
+
+
+
   function calculate(){
-    for (i=0; i<operation.length; i++){
+    let answer = 0;
+    for (i=0; i<operator.length; i++){
       if (operation.length[i] == "+"){
+        answer = 2
 
       }
     }
