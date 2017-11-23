@@ -14,10 +14,15 @@ let operator = document.getElementsByClassName("opr-btn")
 }
 let equation = []
 
+//add a function where equation.length is TOO big --> respone with OK smarty
+
 
 //functions to display numbers/operators and push to the equation array, which will be used to perform the calculation
 function display(){
   document.getElementById("calc-equation").innerHTML = equation.join("")
+  if (equation.length > 10){
+    return document.getElementById("calc-equation").innerHTML = "That's a lot of numbers. Let's not get carried away now."
+  }
 }
 function display0(){
   document.getElementById("calc-screen").innerHTML = 0
@@ -59,13 +64,24 @@ function displayMinus(){
 function displayAnswer(){
   //this will call on a variable "answer" that I will define below to be the result of the equation
   display()
-  numbers()
+  getNumbers()
 }
 
-
+//operator will always be at an odd placement, 1,3,5...
 function getNumbers(){
 let operation = equation.join("");
 let numbers =  operation.split(/\D/g)
-  console.log(numbers)
+  console.log("numbers " + numbers)
+  function calculate(){
+    for (i=0; i<operation.length; i++){
+      if (operation.length[i] == "+"){
+
+      }
+    }
+  }
+}
+
+function calculate(){
+
 
 }
