@@ -23,9 +23,10 @@ let numbers = []
 //functions to display numbers/operators and push to the equation array, which will be used to perform the calculation
 function displayEquation(){
   document.getElementById("calc-equation").innerHTML = equation.join("")
+  /* chose a good length to max out at
   if (equation.length > 10){
     return document.getElementById("calc-equation").innerHTML = "That's a lot of numbers. Let's not get carried away now."
-  }
+  }*/
 }
 function display0(){
   document.getElementById("calc-screen").innerHTML = 0
@@ -75,18 +76,18 @@ getEquation();
 function getEquation(){
   //split the numbers out
 let operation = equation.join("");
-  getNumbers = operation.split(/\D/g);
+  getNumbers = operation.split(/\D/g); //removes everything but digits
   for (x=0; x<getNumbers.length; x++){
-    getNumbers[x] = Number(getNumbers[x])
+    getNumbers[x] = Number(getNumbers[x]) //converts string to a number
     numbers.push(getNumbers[x])
   }
 
   console.log(numbers)
 
 //split the operators
-getOperators = operation.split(/\d/g)
+getOperators = operation.split(/\d/g) //removes everything but operator
 for (j=0; j < getOperators.length; j++){
-  if (getOperators[j] == "+" || getOperators[j] == "-" ){
+  if (getOperators[j] == "+" || getOperators[j] == "-" ){ //sending operators to new array (no white space)
     operator.push(getOperators[j])
   }
 }
