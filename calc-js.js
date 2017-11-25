@@ -8,6 +8,7 @@ document.getElementById("3").addEventListener("click", display3);
 document.getElementById("plus").addEventListener("click", displayPlus);
 document.getElementById("minus").addEventListener("click", displayMinus);
 document.getElementById("times").addEventListener("click", displayTimes);
+document.getElementById("divide").addEventListener("click", displayDivide);
 document.getElementById("equals").addEventListener("click", displayAnswer);
 document.getElementById("clear").addEventListener("click", clear);
 
@@ -68,6 +69,12 @@ function displayMinus(){
 function displayTimes(){
   document.getElementById("calc-screen").innerHTML = "x"
   equation.push("x")
+  displayEquation()
+}
+
+function displayDivide(){
+  document.getElementById("calc-screen").innerHTML = "/"
+  equation.push("/")
   displayEquation()
 }
 
