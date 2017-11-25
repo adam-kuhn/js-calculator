@@ -136,14 +136,20 @@ function calculate(){
 else if (numbers.length > 2){
 
   if (operator[i] == "x"){
-    if (answer == 0){
+    if (answer == 0){ //if answer is 0 then this is the first operation, therefore need both numbers before and after the term
       answer = numbers[i] * numbers[i+1]
     } else {
       answer = answer * numbers[i+1]
     }
-
   }
-  //answer = "this works"
+  else if (operator[i] == "/"){
+    if (answer == 0){ //if answer is 0 then this is the first operation, therefore need both numbers before and after the term
+      answer = numbers[i] / numbers[i+1]
+    } else {
+      answer = answer / numbers[i+1]
+    }
+  }
+
 }
 }
   //document.getElementById("calc-screen").innerHTML = answer
