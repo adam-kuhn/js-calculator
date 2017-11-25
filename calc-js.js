@@ -104,7 +104,7 @@ let operation = equation.join("");
 //split the operators
 getOperators = operation.split(/\d/g) //removes everything but operator
 for (j=0; j < getOperators.length; j++){
-  if (getOperators[j] == "+" || getOperators[j] == "-" ){ //sending operators to new array (no white space)
+  if (getOperators[j] == "+" || getOperators[j] == "-" || getOperators[j] == "x" || getOperators[j] == "/" ){ //sending operators to new array (no white space)
     operator.push(getOperators[j])
   }
 }
