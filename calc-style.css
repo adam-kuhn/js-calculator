@@ -3,6 +3,10 @@
   font-weight: bold;
 }
 
+.opr-btn{
+  background: #ea5757;
+}
+
 .screen {
   background: white;
   margin: 1rem;
