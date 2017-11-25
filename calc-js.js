@@ -8,7 +8,7 @@ document.getElementById("3").addEventListener("click", display3);
 document.getElementById("plus").addEventListener("click", displayPlus);
 document.getElementById("minus").addEventListener("click", displayMinus);
 document.getElementById("equals").addEventListener("click", displayAnswer);
-
+document.getElementById("clear").addEventListener("click", clear);
 
 let digits = document.getElementsByClassName("nbr-btn")
 let operator = document.getElementsByClassName("opr-btn")
@@ -37,7 +37,6 @@ function display0(){
 function display1(){
   document.getElementById("calc-screen").innerHTML = 1
   equation.push(1)
-  //document.getElementById("calc-equation").innerHTML = equation.join("")
   displayEquation()
 }
 
@@ -64,6 +63,11 @@ function displayMinus(){
   equation.push("-")
   displayEquation()
 
+}
+
+//clear everything button
+function clear (){
+  window.location.reload();
 }
 
 function displayAnswer(){
@@ -98,12 +102,20 @@ for (j=0; j < getOperators.length; j++){
 
 function calculate(){
   let answer = 0;
+
+  //2 number equations
+  if (numbers.length <= 2) {
   for (i=0; i<operator.length; i++){
     if (operator[i] == "+"){
-
        answer = answer + numbers[i] + numbers[i+1]
     }
-  }
+   else if (operator[i] == "-"){
+     answer = numbers[i] - numbers[i+1] - answer
+   }
+ }
+} else if (numbers.length > 2){
+  answer = "this works"
+}
   //document.getElementById("calc-screen").innerHTML = answer
   console.log(answer)
 }
