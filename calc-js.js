@@ -107,10 +107,16 @@ function calculate(){
   if (numbers.length <= 2) {
   for (i=0; i<operator.length; i++){
     if (operator[i] == "+"){
-       answer = answer + numbers[i] + numbers[i+1]
+       answer = numbers[i] + numbers[i+1]
     }
    else if (operator[i] == "-"){
-     answer = numbers[i] - numbers[i+1] - answer
+     answer = numbers[i] - numbers[i+1]
+   }
+   else if (operator[i] == "x"){
+     answer = numbers[i] * numbers[i+1]
+   }
+   else if (operator[i] == "/"){
+     answer = numbers[i] / numbers[i+1]
    }
  }
 } else if (numbers.length > 2){
