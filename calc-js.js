@@ -115,10 +115,9 @@ for (j=0; j < getOperators.length; j++){
 
 function calculate(){
   let answer = 0;
-
+  for (i=0; i<operator.length; i++){
   //2 number equations
   if (numbers.length <= 2) {
-  for (i=0; i<operator.length; i++){
     if (operator[i] == "+"){
        answer = numbers[i] + numbers[i+1]
     }
@@ -132,8 +131,20 @@ function calculate(){
      answer = numbers[i] / numbers[i+1]
    }
  }
-} else if (numbers.length > 2){
-  answer = "this works"
+
+//equations with more than 2 numbers
+else if (numbers.length > 2){
+
+  if (operator[i] == "x"){
+    if (answer == 0){
+      answer = numbers[i] * numbers[i+1]
+    } else {
+      answer = answer * numbers[i+1]
+    }
+
+  }
+  //answer = "this works"
+}
 }
   //document.getElementById("calc-screen").innerHTML = answer
   document.getElementById("calc-screen").innerHTML = answer
