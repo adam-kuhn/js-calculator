@@ -140,14 +140,14 @@ function calculate(){
 else if (numbers.length > 2){
 
   if (operator[i] == "x"){
-    if (answer == 0){
+    if (i == 0){
       answer = numbers[i] * numbers[i+1]
     } else {
       answer = answer * numbers[i+1]
     }
   }
   else if (operator[i] == "/"){
-    if (answer == 0){
+    if (i == 0){
       answer = numbers[i] / numbers[i+1]
     } else {
       answer = answer / numbers[i+1]
