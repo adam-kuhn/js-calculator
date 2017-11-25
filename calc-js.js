@@ -133,23 +133,45 @@ function calculate(){
  }
 
 //equations with more than 2 numbers
+//look for x or / first, because of order of operations
+//if answer == 0 then this is the first term
+//need to prob do recursion for the + and - to order properly
+//0 messes up the + and -
 else if (numbers.length > 2){
 
   if (operator[i] == "x"){
-    if (answer == 0){ //if answer is 0 then this is the first operation, therefore need both numbers before and after the term
+    if (answer == 0){
       answer = numbers[i] * numbers[i+1]
     } else {
       answer = answer * numbers[i+1]
     }
   }
   else if (operator[i] == "/"){
-    if (answer == 0){ //if answer is 0 then this is the first operation, therefore need both numbers before and after the term
+    if (answer == 0){
       answer = numbers[i] / numbers[i+1]
     } else {
       answer = answer / numbers[i+1]
     }
   }
+  else if (operator[i] == "+"){
+    if (answer == 0)
+    {
+      answer = numbers[i] + numbers[i+1]
+    } else{
+      answer = answer + numbers[i+1]
+    }
+  }
 
+  else if (operator[i] == "-"){
+    if (answer == 0)
+    {
+      answer = numbers[i] - numbers[i+1]
+    } else{
+      answer = answer - numbers[i+1]
+    }
+
+
+}
 }
 }
   //document.getElementById("calc-screen").innerHTML = answer
