@@ -25,6 +25,7 @@ let operator = document.getElementsByClassName("opr-btn")
 let equation = []
 let operator = []
 let numbers = []
+let multDiv = []
 
 //add a function where equation.length is TOO big --> respone with OK smarty
 
@@ -151,8 +152,13 @@ for (j=0; j < getOperators.length; j++){
   if (getOperators[j] == "+" || getOperators[j] == "-" || getOperators[j] == "x" || getOperators[j] == "/" ){ //sending operators to new array (no white space)
     operator.push(getOperators[j])
   }
+  if (getOperators[j] == "x" || getOperators[j] == "/" ){ //sending x and / to new array (no white space) to determine BEDMAS
+    multDiv.push(getOperators[j])
+  }
 }
   console.log("operators " + operator)
+  console.log("multDiv " + multDiv)
+
     //console.log("length " + operator.length)
 
 }
@@ -258,7 +264,7 @@ else if (numbers.length > 2){
       } */
       answer = numbers[i] + numbers[i+1]
     }
-    } else{
+    else{
       answer = answer + numbers[i+1]
     }
   }
@@ -274,7 +280,8 @@ else if (numbers.length > 2){
 
 }
 }
-
+}
+//try to count the number of "x" or "/"?
 
   document.getElementById("calc-screen").innerHTML = answer
 }
