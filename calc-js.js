@@ -117,5 +117,5 @@ function calculate(){
   answer = "this works"
 }
   //document.getElementById("calc-screen").innerHTML = answer
-  console.log(answer)
+  document.getElementById("calc-screen").innerHTML = answer
 }
