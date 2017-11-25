@@ -112,9 +112,9 @@ for (j=0; j < getOperators.length; j++){
     //console.log("length " + operator.length)
 
 }
+let answer = 0;
+function calculate(answer){
 
-function calculate(){
-  let answer = 0;
   for (i=0; i<operator.length; i++){
   //2 number equations
   if (numbers.length <= 2) {
@@ -154,9 +154,14 @@ else if (numbers.length > 2){
     }
   }
   else if (operator[i] == "+"){
-    if (answer == 0)
-    {
-      answer = numbers[i] + numbers[i+1]
+    if (i == 0) {
+      for (j=0; j<operator.length; j++){
+      if (operator[j] == "x" || operator[j] == "/"){
+        calculate(answer)
+      } else {
+        answer = answer = numbers[i] + numbers[i+1]
+      }
+    }
     } else{
       answer = answer + numbers[i+1]
     }
