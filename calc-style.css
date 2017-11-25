@@ -2,6 +2,7 @@
   background: #88da2f;
   font-weight: bold;
   width: 70px;
+  font-size: 15px;
 }
 
 .opr-btn{
@@ -16,5 +17,8 @@
   background: #b5d6c552;
   margin: 1rem 15%;
   padding: 1rem;
+  border-radius: 4px;
+  border: 1px solid #bbb;
+  font-size: 20px;
 
 }
