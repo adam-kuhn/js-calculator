@@ -1,7 +1,10 @@
 .button {
-  background: red;
+  background: grey;
+  font-weight: bold;
 }
 
-.button-blue {
-  background: blue;
+.screen {
+  background: white;
+  margin: 1rem;
+  padding: 1rem
 }

@@ -112,9 +112,59 @@ for (j=0; j < getOperators.length; j++){
     //console.log("length " + operator.length)
 
 }
-let answer = 0;
-function calculate(answer){
+//2 number equations
+/*function simpleCalc(){
+  for (i=0; i<operator.length; i++){
 
+
+    if (operator[i] == "+"){
+       answer = numbers[i] + numbers[i+1]
+    }
+   else if (operator[i] == "-"){
+     answer = numbers[i] - numbers[i+1]
+   }
+   else if (operator[i] == "x"){
+     answer = numbers[i] * numbers[i+1]
+   }
+   else if (operator[i] == "/"){
+     answer = numbers[i] / numbers[i+1]
+   }
+ }
+} */
+
+/* attempt to search for multiple x and /
+function searchTimeDiv(){
+  for (j=0; j<operator.length; j++){
+
+      if (operator[j] == "x" || operator[j] == "/") {
+        for (h=0; h<operator.length; h++){
+        if (operator[h] == "x" || operator [j] == "/"){
+
+        }
+
+      }
+
+    }
+
+
+
+
+  }
+}*/
+
+let answer = 0;
+function calculate(){
+  /*
+  trying to make it simpler by using fucntions above
+  if (numbers.length <= 2){
+    simpleCalc()
+  } else {
+    searchTimeDiv()
+  }
+    document.getElementById("calc-screen").innerHTML = answer
+}*/
+
+//working calc
   for (i=0; i<operator.length; i++){
   //2 number equations
   if (numbers.length <= 2) {
@@ -155,12 +205,14 @@ else if (numbers.length > 2){
   }
   else if (operator[i] == "+"){
     if (i == 0) {
+      /* trying recursion
       for (j=0; j<operator.length; j++){
       if (operator[j] == "x" || operator[j] == "/"){
         calculate(answer)
       } else {
         answer = answer = numbers[i] + numbers[i+1]
-      }
+      } */
+      answer = numbers[i] + numbers[i+1]
     }
     } else{
       answer = answer + numbers[i+1]
@@ -178,7 +230,7 @@ else if (numbers.length > 2){
 
 }
 }
-}
-  //document.getElementById("calc-screen").innerHTML = answer
+
+
   document.getElementById("calc-screen").innerHTML = answer
 }
