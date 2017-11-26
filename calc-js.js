@@ -162,45 +162,7 @@ for (j=0; j < getOperators.length; j++){
     //console.log("length " + operator.length)
 
 }
-//2 number equations
-/*function simpleCalc(){
-  for (i=0; i<operator.length; i++){
 
-
-    if (operator[i] == "+"){
-       answer = numbers[i] + numbers[i+1]
-    }
-   else if (operator[i] == "-"){
-     answer = numbers[i] - numbers[i+1]
-   }
-   else if (operator[i] == "x"){
-     answer = numbers[i] * numbers[i+1]
-   }
-   else if (operator[i] == "/"){
-     answer = numbers[i] / numbers[i+1]
-   }
- }
-} */
-
-/* attempt to search for multiple x and /
-function searchTimeDiv(){
-  for (j=0; j<operator.length; j++){
-
-      if (operator[j] == "x" || operator[j] == "/") {
-        for (h=0; h<operator.length; h++){
-        if (operator[h] == "x" || operator [j] == "/"){
-
-        }
-
-      }
-
-    }
-
-
-
-
-  }
-}*/
 
 let answer = 0;
 function calculate(){
@@ -238,38 +200,10 @@ function calculate(){
 //need to prob do recursion for the + and - to order properly
 //0 messes up the + and -
 else if (numbers.length > 2){
-  //multiple Div and Times - need to determine a way to jump out after all x and / have been used
-    if (operator[i] == "x" && answer == 0){
-      answer = numbers[i] * numbers[i+1]
-      for (j=1; j<operator.length; j++){
-        if (operator[j] == "x"){
-          answer = answer * numbers[i+1]
 
 
-        } else if (operator[j] == "/")
-        answer = answer / numbers[i+1]
-      }
-      for (h=0; h<operator.length; h++){
-        if (operator[h] == "+"){
-          answer = answer + numbers[h+1]
-        }
-        else if (operator[h] == "-"){
-          answer = answer - numbers[h+1]
-        }
-      }
 
-    } else if (operator[i] == "/" && answer == 0){
-      answer = numbers[i] / numbers [i+1]
-      for (j=1; j<operator.length; j++){
-        if (operator[j] == "x"){
-          answer = answer * numbers[i+1]
-        } else if (operator[j] == "/")
-        answer = answer / numbers[i+1]
-      }
-    }
-
-
-/*  if (operator[i] == "x"){
+ if (operator[i] == "x"){
     if (i == 0){
       answer = numbers[i] * numbers[i+1]
     } else {
@@ -293,19 +227,49 @@ else if (numbers.length > 2){
   }
 
   else if (operator[i] == "-"){
-    if (answer == 0)
+    if (i == 0)
     {
       answer = numbers[i] - numbers[i+1]
     } else{
       answer = answer - numbers[i+1]
     }
-    */
+
 
 
 }
 }
 
-//try to count the number of "x" or "/"?
+}
 
   document.getElementById("calc-screen").innerHTML = answer
 }
+
+//code attempting to correctly respond to the order of operations. However the solution does not require this, so I have stopped...doesn't work right now anyway
+  /* if (operator[i] == "x" && answer == 0){
+    answer = numbers[i] * numbers[i+1]
+    for (j=1; j<operator.length; j++){
+      if (operator[j] == "x"){
+        answer = answer * numbers[i+1]
+
+
+      } else if (operator[j] == "/")
+      answer = answer / numbers[i+1]
+    }
+    for (h=0; h<operator.length; h++){
+      if (operator[h] == "+"){
+        answer = answer + numbers[h+1]
+      }
+      else if (operator[h] == "-"){
+        answer = answer - numbers[h+1]
+      }
+    }
+
+  } else if (operator[i] == "/" && answer == 0){
+    answer = numbers[i] / numbers [i+1]
+    for (j=1; j<operator.length; j++){
+      if (operator[j] == "x"){
+        answer = answer * numbers[i+1]
+      } else if (operator[j] == "/")
+      answer = answer / numbers[i+1]
+    }
+  } */
