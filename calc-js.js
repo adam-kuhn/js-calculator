@@ -33,10 +33,10 @@ let multDiv = []
 //functions to display numbers/operators and push to the equation array, which will be used to perform the calculation
 function displayEquation(){
   document.getElementById("calc-equation").innerHTML = equation.join("")
-  /* chose a good length to max out at
-  if (equation.length > 10){
-    return document.getElementById("calc-equation").innerHTML = "That's a lot of numbers. Let's not get carried away now."
-  }*/
+
+  if (equation.length > 20){
+    return document.getElementById("calc-equation").innerHTML = "screen too small!"
+  }
 }
 function display0(){
   document.getElementById("calc-screen").innerHTML = 0
@@ -134,7 +134,7 @@ getEquation();
   calculate()
 
 }
-//operator will always be at an odd placement, 1,3,5...
+//operator will always be at an odd placement, 1,3,5. True but not used in my code
 function getEquation(){
   //split the numbers out
 let operation = equation.join("");
@@ -152,12 +152,12 @@ for (j=0; j < getOperators.length; j++){
   if (getOperators[j] == "+" || getOperators[j] == "-" || getOperators[j] == "x" || getOperators[j] == "/" ){ //sending operators to new array (no white space)
     operator.push(getOperators[j])
   }
-  if (getOperators[j] == "x" || getOperators[j] == "/" ){ //sending x and / to new array (no white space) to determine BEDMAS
+  /*if (getOperators[j] == "x" || getOperators[j] == "/" ){ //sending x and / to new array (no white space) to determine BEDMAS
     multDiv.push(getOperators[j])
-  }
+  }*/
 }
-  console.log("operators " + operator)
-  console.log("multDiv " + multDiv)
+  //console.log("operators " + operator)
+  //console.log("multDiv " + multDiv)
 
     //console.log("length " + operator.length)
 
@@ -166,15 +166,7 @@ for (j=0; j < getOperators.length; j++){
 
 let answer = 0;
 function calculate(){
-  /*
-  trying to make it simpler by using fucntions above
-  if (numbers.length <= 2){
-    simpleCalc()
-  } else {
-    searchTimeDiv()
-  }
-    document.getElementById("calc-screen").innerHTML = answer
-}*/
+
 
 //working calc
   for (i=0; i<operator.length; i++){
