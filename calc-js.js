@@ -112,8 +112,8 @@ function displayMinus(){
 }
 
 function displayTimes(){
-  document.getElementById("calc-screen").innerHTML = "x"
-  equation.push("x")
+  document.getElementById("calc-screen").innerHTML = "*"
+  equation.push("*")
   displayEquation()
 }
 
@@ -130,8 +130,11 @@ function clear (){
 
 function displayAnswer(){
   //this will call on a variable "answer" that I will define below to be the result of the equation
-getEquation();
-  calculate()
+  document.getElementById("calc-screen").innerHTML = eval(equation.join(""))
+
+  //old functions that worked as a simple calculator but doesn't account for order of operations
+  //getEquation();
+  //calculate()
 
 }
 //operator will always be at an odd placement, 1,3,5. True but not used in my code
